@@ -1,0 +1,6 @@
+numpy
+towhee
+towhee.models
+pymilvus==2.2.11
+gradio
+pandas
