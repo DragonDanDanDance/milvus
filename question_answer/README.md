@@ -14,35 +14,43 @@
 
 ``` bash
 git submodule status
-# init submodule on first time
+# Init submodule on first time
 git submodule init question_answer/model/dpr-question_encoder-single-nq-base
 git submodule update question_answer/model/dpr-question_encoder-single-nq-base
 ```
 
-### On Local
+## Deploy On Local
 
-#### Install Dependencies
+### Install Dependencies
 
 ``` bash
 python -m pip install -r requirements.txt
 ```
 
-#### Load vector into Milvus
+### Set Up the Environment
+
+``` bash
+export MILVUS_IP={your milvus ip. default '127.0.0.1'}
+export MILVUS_PORT={your milvus port. default '19530'}
+export MILVUS_DATASET_PATH={your dataset path. default './dataset/question_answer.csv'}
+```
+
+### Load vector into Milvus
 
 ``` bash
 python create_milvus_collection.py
 python load_embedding.py
 ```
 
-#### Run on Gradio
+### Run on Gradio
 
 ``` bash
 python release.py
 ```
 
-### On Docker
+## Deploy On Docker
 
-#### Load vector into Milvus (on Docker)
+### Load vector into Milvus (On Docker.)
 
 ``` bash
 docker build -t python:3.9.17-milvus -f ./docker/load.Dockerfile .
@@ -54,7 +62,7 @@ docker run --rm --name milvus-towhee \
 -it python:3.9.17-milvus
 ```
 
-#### Run on Gradio (on Docker)
+### Run on Gradio (On Docker.)
 
 ``` bash
 docker build -t python:3.9.17-gradio -f ./docker/release.Dockerfile .
@@ -67,7 +75,7 @@ docker run --name gradio \
 -itd python:3.9.17-gradio
 ```
 
-### Access
+## Access
 
 Running on local URL:  <http://127.0.0.1:7860>
 
