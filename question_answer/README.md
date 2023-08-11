@@ -15,8 +15,8 @@
 ``` bash
 git submodule status
 # Init submodule on first time
-git submodule init question_answer/model/dpr-question_encoder-single-nq-base
-git submodule update question_answer/model/dpr-question_encoder-single-nq-base
+git submodule init question_answer/model/dpr-ctx_encoder-single-nq-base
+git submodule update question_answer/model/dpr-ctx_encoder-single-nq-base
 ```
 
 ## Deploy On Local
