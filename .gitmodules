@@ -1,3 +1,3 @@
-[submodule "question_answer/model/dpr-question_encoder-single-nq-base"]
-	path = question_answer/model/dpr-question_encoder-single-nq-base
+[submodule "question_answer/model/dpr-ctx_encoder-single-nq-base"]
+	path = question_answer/model/dpr-ctx_encoder-single-nq-base
 	url = https://huggingface.co/facebook/dpr-ctx_encoder-single-nq-base
