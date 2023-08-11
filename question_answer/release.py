@@ -5,9 +5,9 @@ from towhee import pipe, ops
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv(mvar.get_q_a_path())
-df.head()
-__id_answer = df.set_index('id')['answer'].to_dict()
+__df = pd.read_csv(mvar.get_q_a_path())
+__df.head()
+__id_answer = __df.set_index('id')['answer'].to_dict()
 
 def main():
     # connect milvus

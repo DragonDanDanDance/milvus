@@ -5,19 +5,13 @@ milvus_port: str = os.environ.get('MILVUS_PORT')
 milvus_dataset_path: str = os.environ.get('MILVUS_DATASET_PATH')
 
 def get_ip():
-    if milvus_ip is None or len(str(milvus_ip)) == 0:
-       return '127.0.0.1'
-    return str(milvus_ip)
+    return milvus_ip or '127.0.0.1'
 
 def get_port():
-    if milvus_port is None or len(str(milvus_port)) == 0:
-       return '19530'
-    return str(milvus_port)
+    return milvus_port or '19530'
 
 def get_q_a_path():
-    if milvus_dataset_path is None or len(str(milvus_dataset_path)) == 0:
-       return './dataset/question_answer.csv'
-    return str(milvus_dataset_path)
+    return milvus_dataset_path or './dataset/question_answer.csv'
 
 def get_collection_name():
     return 'question_answer'
